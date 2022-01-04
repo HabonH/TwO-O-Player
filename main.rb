@@ -2,6 +2,6 @@ require './game'
 require './player'
 require './question'
 
-game = Game.new
+game = Game.new("New Game")
 game.start
 

@@ -5,16 +5,15 @@ class Question
     @total = @num1 + @num2
   end
   
-  def question?(name)
-    puts "#{name}: What is #{@num1} + #{@num2}?"
+  def question?(player)
+    puts "#{player.name}: What is #{@num1} + #{@num2}?"
+    print '> '
     response = gets.chomp.to_i
     if response == @total
-      puts "#{name}: YES! You are correctamundo!"
-      "#{player1.lives} vs #{player2.lives}"
+      puts "#{player.name}: YES! You are correctamundo!"
     else
-      puts "You're wrong, lose a life"
-      current_player.decrease_life
-      "#{player1.lives} vs #{player2.lives}"
+      puts "#{player.name}: Seriously? No!"
+      player.decrease_life
     end
   end
 end
